@@ -2,99 +2,115 @@
 
 # **Description:**
 
-The miniRT project explores and guide the developers into the firsts steps
-in computer graphics, and introduce to base concepts of the field such as
-vector math, geometric intersections, object shading, lighting models and
-much more we gonna see through this document.
+The **NetPractice** project introduces fundamental networking concepts through a hands-on training interface. The goal is to understand how devices communicate over a network by correctly configuring IP addressing and routing across different levels of difficulty.
+
+Through progressive exercises, the project covers how data flows between hosts, routers, and the internet, requiring the student to fix misconfigured networks and ensure proper connectivity.
 
 ### 1. Goals:
-- The project main goal is to create a simple RayTracing Engine that render a static scene applying a baseline of concepts, the ability to manipulate the object presence in the scene, light management features *e.g:* spot brightness, hard shadows, ambient lighting and diffuse lighting.
-- A few requiriments are defined, a limited scope of standard C library functions *(check notes)*, at least 3 types of geometric objects *(Spheres, cylinders and planes)*, and the usage of MiniLibX, the 42 school framework for graphics.
+- Understand how IP addressing works (IPv4)
+- Learn how to configure subnet masks correctly
+- Identify and fix routing issues
+- Understand the role of default gateways
+- Gain practical knowledge of how routers and switches operate
+- Apply networking theory to solve real configuration problems
+
+---
 
 # **Instructions:**
 
-### 1. Install MiniLibX dependencies (Linux)
+### 1. Access the NetPractice training interface
 
+You can use the official 42 NetPractice interface via browser or locally depending on your setup.
 
-```
-sudo apt-get update
-```
-
-```
-sudo apt-get install -y xorg libxext-dev libx11-dev libxrender-dev libxrandr-dev libbsd-dev
-```
-
-| Library		|	What is for |
-| -------------- | ------------- |
-| xorg | Graphic base server for Linux |
-| libxext-dev | X11 module extensions used by MiniLibX |
-| libx11-dev | X11 main extensions used by MiniLibX |
-| libxrender-dev | X11 2D renderization functions
-| libxrandr-dev | X11 Window management functions
-| libbsd-dev | Auxiliary functions used by MiniLibX linux version
-
-*To learn more about 42 MinilibX library access* 
-[MinilibX 42paris repository](https://github.com/42paris/minilibx-linux)
-
-### 2. Clone or download repository:
-
-[Download link](https://github.com/rach3bartmoss/miniRT#)
-
-or
+If running locally:
 
 ```
-git clone git@github.com:rach3bartmoss/miniRT.git
+./run.sh
 ```
 
-### 3. Enter the root repository and compile the project.
+This will launch the training interface where you can solve each level interactively.
+
+---
+
+### 2. Solve the levels
+
+- Each level presents a network with incorrect configurations
+- You must fix IPs, masks, and routes to make communication possible
+- Validate your solution using the interface tools
+
+---
+
+### 3. Export configurations
+
+Once a level is solved:
+
+- Use the **“Export”** button in the interface
+- This generates a `.json` configuration file for that level
+
+---
+
+### 4. Submission requirements
+
+- You must export **10 configuration files (one per level)**
+- Place all exported `.json` files at the **root of your repository**
+- Ensure they are correctly named and correspond to each level
+
+Example:
 
 ```
-cd miniRT && make
+level1.json
+level2.json
+...
+level10.json
 ```
 
-### 4. To run the program:
-
-```
-./miniRT scenes/scene_1.rt
-```
-(browse for different scenes in scenes folder)
+---
 
 # **Resources**
 
-Main resources used to complete the mandatory part of the project:
-- Ray-Tracing tutorial by 
-[scratchapixel.com](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing/how-does-it-work.html)
-- Ray-Object Intersection by [tutorialspoint.com](https://www.tutorialspoint.com/computer_graphics/ray_object_intersection_in_ray_tracing.htm)
+### Networking Concepts Studied:
 
-- Full phong illumination model by [utexas.edu](https://www.cs.utexas.edu/~bajaj/graphics2012/cs354/lectures/lect14.pdf)
-- Full phong illumination model equation:
+During this project, the following core networking concepts are explored:
 
-![Full phong illumination model](includes/readme_misc/phong_illumination_equation_banner.jpg)
+- **TCP/IP addressing** (IPv4 structure and usage)
+- **Subnet masks** and network segmentation
+- **Default gateways** and routing logic
+- **Routers and switches** (their roles in a network)
+- **OSI Model layers** (especially Network and Data Link layers)
+- **Packet routing and delivery**
+- **Local vs remote network communication**
 
-# **Bonus Features:**
-<p>The bonus part expands the mandatory engine with additional visual and geometric features, such as a new object: Paraboloid, the Full Phong Reflection Model (Ambient + diffuse + specular), a checkerboard pattern applied to spheres, planes and cylinders, textures to planes and spheres objects and bump mapping to match the textures, the engine currently doesn't support multispot lights but we can edit the color of the light source in the .rt file</p>
+---
 
-### 1. Full Phong Reflection Model (Specular)
-The mandatory part already implements ambient and diffuse lighting. The bonus adds the **specular component**, completing the full Phong reflection model. This simulates the bright highlight you see on shiny surfaces when light reflects directly toward the camera.
+### Learning Resources:
 
-### 2. Checkerboard Pattern
-A procedural **checkerboard texture** can be applied to any object in the scene. This is achieved through color disruption based on the hit point coordinates, alternating between two colors without needing an external texture file.
+- Computer Networking basics  
+  https://www.geeksforgeeks.org/computer-networks/tcp-ip-model/
 
-<ul>To apply the checkerboard pattern to surfaces use the mouse to left click the desired object</ul>
+- Subnetting explained  
+  https://www.geeksforgeeks.org/introduction-of-subnetting/
 
-### 3. Paraboloid Object
-A new second-degree geometric object is introduced: the **Paraboloid**. Like the sphere, plane and cylinder it supports full intersection math, shading and lighting, and can be placed and oriented freely in the scene via the `.rt` file.
+- OSI Model overview  
+  https://www.w3schools.com/cybersecurity/cybersecurity_networking.php
 
-### 4. Bump Map Textures
-**Bump mapping** allows surfaces to appear textured and uneven without modifying the actual geometry. This is done by perturbing the surface normal at each hit point based on a texture map, simulating depth and roughness under lighting.
+- IP addressing and routing  
+  https://www.cisco.com/c/en/us/products/switches/what-is-a-network-switch.html
 
+---
 
+### How AI was used:
 
-**Bonus resources:**
-- Specular reflection and full Phong model by [utexas.edu](https://www.cs.utexas.edu/~bajaj/graphics2012/cs354/lectures/lect14.pdf)
-- Bump mapping introduction by [scratchapixel.com](https://www.scratchapixel.com/lessons/advanced-rendering/introduction-to-bump-mapping/bump-map.html)
+AI tools were used as a **support tool**, mainly for:
 
-## Important note: 
-### How IA helped us:
+- Clarifying networking concepts (subnetting, routing, IP ranges)
+- Explaining why certain configurations failed
+- Helping debug incorrect network setups
+- Providing alternative explanations for difficult topics
 
-IA agents were mainly used to find specific tutorials and sources more quickly about a topic. For example, if I was learning about Ray-Object intersection I often asked IA for explanations about vectors math and its documentation, since the Ray-Tracing calculations rely heavily in the correct behaviors of its equations and parameters. The main parts of the project where we can find IA influency is on `srcs/objecs/` folder, inside the object intersection math calculations.
+AI was **not used to directly solve levels**, but rather to reinforce understanding and speed up learning when concepts were unclear.
+
+---
+
+## **Additional Notes:**
+
+This project is less about memorization and more about developing intuition for how networks behave. Mistakes in configuration are part of the learning process, and each level builds on previous concepts.
