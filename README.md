@@ -93,9 +93,6 @@ During this project, the following core networking concepts are explored:
 - OSI Model overview  
   https://www.w3schools.com/cybersecurity/cybersecurity_networking.php
 
-- IP addressing and routing  
-  https://www.cisco.com/c/en/us/products/switches/what-is-a-network-switch.html
-
 ---
 
 ### How AI was used:
